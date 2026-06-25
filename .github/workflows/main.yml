@@ -17,9 +17,11 @@ jobs:
         uses: Platane/snk@master
         id: snake-gif
         with:
-          github_user_name: shivam-vishvakarma  # Corrected username
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
+          github_user_name: ${{ github.repository_owner }}  # Corrected username
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=green
 
       - name: Show Git Status (Debugging)
         run: git status
