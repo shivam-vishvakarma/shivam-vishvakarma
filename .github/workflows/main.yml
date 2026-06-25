@@ -18,10 +18,9 @@ jobs:
         id: snake-gif
         with:
           github_user_name: ${{ github.repository_owner }}  # Corrected username
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/ocean.gif?color_snake=green
+          svg_out_path: dist/github-snake.svg
+          svg_out_path_dark: dist/github-snake-dark.svg?palette=github-dark
+          gif_out_path: dist/ocean.gif?color_snake=green
 
       - name: Show Git Status (Debugging)
         run: git status
